@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
                 switch (item.getItemId()){
                     case R.id.nav_home:
                         setTitle("Hóa đơn");
+                        // trọng đẹp trai
                         break;
                     case R.id.nav_mathang:
                         setTitle("Mặt hàng");

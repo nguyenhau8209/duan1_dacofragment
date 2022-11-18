@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="10dp"
+    android:id="@+id/full"
+    app:cardCornerRadius="15dp">
+    <LinearLayout
+        android:background="#26A567"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_weight="8.5"
+            android:layout_width="0dp"
+            android:padding="10dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+android:id="@+id/txtmaloai"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/txttenloai"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/txtudloai"
+
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_baseline_edit_24"/>
+        <ImageView
+            android:id="@+id/txtxoaloai"
+
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_baseline_delete_24"/>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragment.FragmentLoaiMatHang">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:text="Thêm Mặt Hàng"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edThemMatHang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="Nhập Loại: " />
+
+    <Button
+        android:id="@+id/btnAddMatHang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:backgroundTint="@color/black"
+        android:text="Thêm Loại Mặt Hàng" />
+
+    <Button
+        android:id="@+id/btnUpMatHang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="-10dp"
+        android:layout_marginRight="10dp"
+        android:backgroundTint="@color/black"
+        android:text="Sửa Loại Mặt Hàng" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Danh Sách Loại Hàng"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/lvLoaiMatHang"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp" />
+
+
+</LinearLayout>

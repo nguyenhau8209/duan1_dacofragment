@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:gravity="center"
+    android:orientation="vertical">
+    <TextView
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thêm hóa đơn"
+        android:textColor="@color/teal_700"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        />
+    <EditText
+        android:id="@+id/edtMaHD"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập mã hóa đơn"/>
+    <EditText
+        android:id="@+id/edtMaKH"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập mã khách hàng"/>
+    <EditText
+        android:id="@+id/edtMaMH"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập mã mặt hàng"/>
+    <EditText
+        android:id="@+id/edtNgay"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập ngày mua"/>
+
+    <EditText
+        android:id="@+id/edtTien"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Thành tiền"/>
+    <RadioGroup
+        android:id="@+id/radio"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/rdThanhtoan"
+            android:layout_width="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="20dp"
+            android:layout_height="wrap_content"
+            android:text="Đã thanh toán" />
+
+        <RadioButton
+            android:id="@+id/rdChuaTToan"
+            android:layout_marginLeft="100dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chưa thanh toán" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnLuuHD"
+            android:text="Lưu"
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnHuyHD"
+            android:text="Hủy "
+            android:layout_weight="1"
+            android:layout_marginLeft="10dp"/>
+    </LinearLayout>
+
+
+</LinearLayout>

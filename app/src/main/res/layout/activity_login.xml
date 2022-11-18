@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    tools:context=".Login">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_margin="15dp"
+        android:padding="10dp"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_gravity="center"
+            android:src="@drawable/caphelogin"/>
+        <EditText
+            android:layout_marginTop="10dp"
+            android:id="@+id/edtname"
+            android:hint="Username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <EditText
+            android:id="@+id/edtpass"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:ems="10"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <CheckBox
+                android:id="@+id/checkBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lưu Mật khẩu" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="120dp"
+                android:layout_marginEnd="15dp"
+                android:text="Quên mật khẩu?"
+                android:textColor="#DA1111"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/btnlogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Login" />
+
+            <Button
+                android:id="@+id/btnhuy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:text="Exit" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

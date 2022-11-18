@@ -61,7 +61,7 @@ public class MatHangAdapter extends ArrayAdapter<matHang> {
             tvGiaBan.setText("Gía Bán: " + item.getGiaban());
 
             tvLoai = view.findViewById(R.id.txtmaloai);
-            tvLoai.setText("Loại Sách: " + loaiMH.getMaLoaiMatHang());
+            tvLoai.setText("Loại Sách: " + loaiMH.getTenLoaiMatHang());
 
             imgDel = view.findViewById(R.id.txtxoaMH);
         }

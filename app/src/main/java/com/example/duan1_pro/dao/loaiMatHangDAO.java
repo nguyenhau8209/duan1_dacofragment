@@ -34,7 +34,7 @@ public class loaiMatHangDAO {
     public boolean update(loaiMatHang loaiMatHang) {
         ContentValues values = new ContentValues();
         values.put("tenLoaiMH", loaiMatHang.getTenLoaiMatHang());
-        long check = db.update("LOAIMATHANG", values, "maLoaiMH", new String[]{String.valueOf(loaiMatHang.getMaLoaiMatHang())});
+        long check = db.update("LOAIMATHANG", values, "maLoaiMH=?", new String[]{String.valueOf(loaiMatHang.getMaLoaiMatHang())});
         if (check == -1) {
             return false;
         }

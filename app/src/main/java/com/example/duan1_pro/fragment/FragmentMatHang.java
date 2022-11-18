@@ -148,7 +148,7 @@ public class FragmentMatHang extends Fragment {
 
             }
         });
-        edMaMH.setEnabled(true);
+        edMaMH.setEnabled(false);
         if (type != 0) {
             edMaMH.setText(String.valueOf(item.getMaLoaiMatHang()));
             edTenMH.setText(item.getTenMatHang());

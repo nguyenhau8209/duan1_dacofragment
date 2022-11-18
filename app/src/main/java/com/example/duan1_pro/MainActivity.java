@@ -67,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
                         Fragment frgLoaiMatHang = new FragmentLoaiMatHang();
                         manager.beginTransaction().replace(R.id.framelayout, frgLoaiMatHang).commit();
                         break;
+                        // he
                     case R.id.nav_hoadon:
                         setTitle("Hóa đơn");
                         Fragment frgHoaDon = new FragmentHoaDon();

@@ -28,6 +28,8 @@ public class khachHangDAO {
         values.put("tenKhachHang", khachHang.getTenKhachHang());
         values.put("soDT", khachHang.getSoDienThoai());
         values.put("diaChi", khachHang.getDiaChi());
+        values.put("tuoi", khachHang.getTuoi());
+        values.put("gioitinh", khachHang.getGioiTinh());
         return db.insert("KHACHHANG", null, values);
     }
 
@@ -36,6 +38,8 @@ public class khachHangDAO {
         values.put("tenKhachHang", khachHang.getTenKhachHang());
         values.put("soDT", khachHang.getSoDienThoai());
         values.put("diaChi", khachHang.getDiaChi());
+        values.put("tuoi", khachHang.getTuoi());
+        values.put("gioitinh", khachHang.getGioiTinh());
         return db.update("KHACHHANG", values, "maKhachHang=?", new String[]{String.valueOf(khachHang.getMaKhachHang())});
     }
 
@@ -53,6 +57,8 @@ public class khachHangDAO {
             khachHang.setTenKhachHang(c.getString(c.getColumnIndex("tenKhachHang")));
             khachHang.setSoDienThoai(Integer.parseInt(c.getString(c.getColumnIndex("soDT"))));
             khachHang.setDiaChi(c.getString(c.getColumnIndex("diaChi")));
+            khachHang.setTuoi(Integer.parseInt(c.getString(c.getColumnIndex("tuoi"))));
+            khachHang.setGioiTinh(c.getString(c.getColumnIndex("gioitinh")));
             Log.i("zzzz", khachHang.toString());
             list.add(khachHang);
         }

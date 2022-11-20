@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="380dp"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
     <TextView
         android:layout_marginTop="40dp"
@@ -12,12 +12,13 @@
         android:layout_gravity="center"
         android:textColor="#F2A934BD"
         android:textStyle="bold"/>
+
     <EditText
         android:id="@+id/edtMaKH"
-        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nhập mã khách hàng"/>
+        android:layout_marginTop="10dp"
+        android:hint="Nhập mã khách hàng" />
     <EditText
         android:id="@+id/edtNameKH"
         android:layout_marginTop="10dp"
@@ -45,11 +46,13 @@
         android:hint="Nhập tuổi"/>
 
     <RadioGroup
+        android:id="@+id/rdoGroup"
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:layout_height="wrap_content">
 
         <RadioButton
+            android:id="@+id/rdoNam"
             android:layout_width="wrap_content"
             android:layout_gravity="left"
             android:layout_marginLeft="30dp"
@@ -57,6 +60,7 @@
             android:text="Nam" />
 
         <RadioButton
+            android:id="@+id/rdoNu"
             android:layout_marginLeft="190dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

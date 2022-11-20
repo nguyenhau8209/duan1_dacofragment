@@ -16,6 +16,8 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.example.duan1_pro.R;
@@ -38,7 +40,8 @@ public class FragmentKhachHang extends Fragment {
     Dialog dialog;
     EditText edtMaKH, edtNameKH, edtSdtKH, edtDiaChiKH, edtTuoiKH;
     Button btnThem, btnCancle;
-
+    RadioButton rdoNam, rdoNu, rdoSexButton;
+    RadioGroup rdoGroup;
     public FragmentKhachHang() {
         // Required empty public constructor
     }
@@ -55,14 +58,14 @@ public class FragmentKhachHang extends Fragment {
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//
+                openDiaLog(getActivity(), 0);
             }
         });
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
                 item =list.get(i);
-//
+                openDiaLog(getActivity(), 1);
                 return false;
             }
         });
@@ -101,7 +104,7 @@ public class FragmentKhachHang extends Fragment {
 
     protected void openDiaLog(final Context context, final int type){
         dialog=new Dialog(context);
-        dialog.setContentView(R.layout.fragment_khach_hang);
+        dialog.setContentView(R.layout.dialog_themkhachhang);
         edtMaKH=dialog.findViewById(R.id.edtMaKH);
         edtNameKH=dialog.findViewById(R.id.edtNameKH);
         edtSdtKH=dialog.findViewById(R.id.edtSdtKH);
@@ -109,14 +112,22 @@ public class FragmentKhachHang extends Fragment {
         edtTuoiKH=dialog.findViewById(R.id.edtTuoiKH);
         btnThem = dialog.findViewById(R.id.btnThem);
         btnCancle = dialog.findViewById(R.id.btnCancle);
-
+        rdoNam = dialog.findViewById(R.id.rdoNam);
+        rdoNu = dialog.findViewById(R.id.rdoNu);
+        rdoGroup = dialog.findViewById(R.id.rdoGroup);
         edtMaKH.setEnabled(false);
         if(type != 0){
             edtMaKH.setText(String.valueOf(item.getMaKhachHang()));
             edtNameKH.setText(item.getTenKhachHang());
-            edtSdtKH.setText(item.getSoDienThoai());
+            edtSdtKH.setText(String.valueOf(item.getSoDienThoai()));
             edtDiaChiKH.setText(item.getDiaChi());
-//
+            edtTuoiKH.setText(String.valueOf(item.getTuoi()));
+            if (item.getGioiTinh().equalsIgnoreCase("Nam")){
+                rdoNam.setSelected(true);
+            }
+            if (item.getGioiTinh().equalsIgnoreCase("Nữ")){
+                rdoNu.setSelected(true);
+            }
         }
         btnCancle.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -129,8 +140,12 @@ public class FragmentKhachHang extends Fragment {
             public void onClick(View view) {
                 item=new khachHang();
                 item.setTenKhachHang(edtNameKH.getText().toString());
-//                item.setSoDienThoai(edtSdtKH.getText().toString());
+                item.setSoDienThoai(Integer.parseInt(edtSdtKH.getText().toString()));
                 item.setDiaChi(edtDiaChiKH.getText().toString());
+                item.setTuoi(Integer.parseInt(edtTuoiKH.getText().toString()));
+                int checked = rdoGroup.getCheckedRadioButtonId();
+//                rdoSexButton = (RadioButton) view.findViewById(checked);
+//                item.setGioiTinh(rdoSexButton.getText().toString());
                 if(valilate() >0){
                     if(type==0){
                         if(khachhangDAO.insert(item) > 0){
@@ -153,6 +168,7 @@ public class FragmentKhachHang extends Fragment {
                 }
             }
         });
+        dialog.show();
     }
     public int valilate(){
         int check=1;

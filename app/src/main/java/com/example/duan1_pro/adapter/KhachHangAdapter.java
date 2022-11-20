@@ -22,7 +22,7 @@ private Context context;
 FragmentKhachHang fragmentKhachHang;
 private ArrayList<khachHang> list;
 
-TextView Txtmakh, Txttenkh,TxtSDTkh,TxtDiachikh;
+TextView Txtmakh, Txttenkh,TxtSDTkh,TxtDiachikh, txtTuoiKH, txtGioiTinhKH;
 ImageView img;
 
     public KhachHangAdapter( Context context1, FragmentKhachHang fragmentKhachHang, ArrayList<khachHang> list) {
@@ -43,25 +43,31 @@ ImageView img;
         final khachHang item = list.get(position);
         if(item != null){
             Txtmakh = v.findViewById(R.id.txtmakh);
-            Txtmakh.setText("Mã Khách hàng: " + item.getMaKhachHang());
+            Txtmakh.setText("Mã khách hàng: " + item.getMaKhachHang());
 
             Txttenkh = v.findViewById(R.id.txttenkh);
-            Txttenkh.setText("Tên Khách hàng: " + item.getTenKhachHang());
+            Txttenkh.setText("Tên khách hàng: " + item.getTenKhachHang());
 
             TxtSDTkh = v.findViewById(R.id.txtsdtkh);
-            TxtSDTkh.setText("SDT khách hàng: " + item.getSoDienThoai());
+            TxtSDTkh.setText("SĐT: " + item.getSoDienThoai());
 
             TxtDiachikh = v.findViewById(R.id.txtdiachikh);
-            TxtDiachikh.setText("Địa chỉ khách hàng là: " + item.getDiaChi());
+            TxtDiachikh.setText("Địa chỉ: " + item.getDiaChi());
             //
+            txtTuoiKH = v.findViewById(R.id.txttuoikh);
+            txtTuoiKH.setText("Tuổi: "+ item.getTuoi());
+            //
+            txtGioiTinhKH = v.findViewById(R.id.txtgioitinhkh);
+            txtGioiTinhKH.setText("Giới tính: "+ item.getGioiTinh());
             img = v.findViewById(R.id.txtxoakh);
+
         }
 
         img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //call p
-//                fragmentKhachHang.xoa(String.valueOf(item.getMaKhachHang()));
+                fragmentKhachHang.xoa(String.valueOf(item.getMaKhachHang()));
             }
         });
 

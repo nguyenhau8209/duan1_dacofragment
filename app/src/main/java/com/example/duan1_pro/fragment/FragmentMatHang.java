@@ -150,7 +150,7 @@ public class FragmentMatHang extends Fragment {
         });
         edMaMH.setEnabled(false);
         if (type != 0) {
-            edMaMH.setText(String.valueOf(item.getMaLoaiMatHang()));
+            edMaMH.setText(String.valueOf(item.getMaMatHang()));
             edTenMH.setText(item.getTenMatHang());
             edGiaMH.setText(String.valueOf(item.getGiaban()));
             for (int i = 0; i < listLoaiMH.size(); i++)
@@ -159,7 +159,6 @@ public class FragmentMatHang extends Fragment {
                 }
             Log.i("demo", "Sach " + position);
             spinner.setSelection(position);
-
 
         }
         btnCancle.setOnClickListener(new View.OnClickListener() {
@@ -173,8 +172,8 @@ public class FragmentMatHang extends Fragment {
             public void onClick(View view) {
                 item = new matHang();
                 item.setTenMatHang(edTenMH.getText().toString());
-                item.setGiaban(Integer.parseInt(edGiaMH.getText().toString()));
-                item.setMaMatHang(maLoaiMH);
+                item.setGiaban(Float.parseFloat(edGiaMH.getText().toString()));
+                item.setMaLoaiMatHang(maLoaiMH);
                 if (validate() > 0) {
                     if (type == 0) {
                         if (mathangDAO.insert(item)  ) {
